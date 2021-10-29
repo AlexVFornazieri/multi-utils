@@ -1,0 +1,10 @@
+{
+  "name": "multi-utils",
+  "version": "0.0.0",
+  "description": "A multi-platform utils pack.",
+  "main": "index.js",
+  "repository": "https://github.com/AlexVFornazieri/multi-utils.git",
+  "author": "Alex V. Fornazieri <alexvfornazieri@gmail.com>",
+  "license": "MIT",
+  "private": false
+}
