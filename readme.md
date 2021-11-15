@@ -1,14 +1,15 @@
 # Vuetify and JS utils pack
 
-This package have Vuetify/Nuxt an JS utils funcions and mixins, more especifily (but not only) for braziliam (pt-BR) projects.
-Esse projeto contem codigos utils incluindo mixers para Vuetify/Nuxt, mas especificamente (mas não exclusivamente) para projetos brasileros.
+This package ia multi proposes JS utils pack, for utils funcions, mixins and others, for JS (browser or Node), Vue/Vuetify and ... (comming soon).
+
+Also include some braziliam documents validations.
 
 ## Install
 
 ```bash
-yarn add vuetify-js-utils
+yarn add multi-utils
 # or
-npm install --save vuetify-js-utils
+npm install --save multi-utils
 ```
 ### Eg. Validate CPF or CNPJ (validar CPF ou CNPJ)
 
@@ -18,7 +19,7 @@ npm install --save vuetify-js-utils
 </template>
 
 <script>
-  import { OnRules } from 'vuetify-js-utils'
+  import { OnRules } from 'multi-utils/vuetify/mixins'
 
   export default {
     mixins: [OnRules]
