@@ -1,15 +1,20 @@
 {
   "name": "multi-utils",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A multi-platform utils pack.",
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": "https://github.com/AlexVFornazieri/multi-utils.git",
   "author": "Alex V. Fornazieri <alexvfornazieri@gmail.com>",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "npx babel src --out-dir dist && tsc",
     "start": "npx babel src --watch --out-dir dist",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "build": "npm run build:types && npm run build:js",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
     "prepublishOnly": "npm run build && cp -r ./dist/* . && rm -rf ./dist",
     "postpublish": "git clean -fd"
   },
@@ -19,14 +24,17 @@
     "vuex": "^3.6.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.16.7",
+    "@babel/core": "^7.16.7",
     "@babel/eslint-parser": "^7.16.3",
+    "@babel/plugin-proposal-decorators": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
     "@nuxtjs/eslint-config-typescript": "^8.0.0",
     "@types/vue": "^2.0.0",
-    "babel-cli": "^6.26.0",
     "eslint": "^8.4.1",
     "eslint-plugin-nuxt": "^3.1.0",
-    "typescript": "^4.5.4",
-    "webpack": "^5.59.1"
+    "regenerator-runtime": "^0.13.9",
+    "typescript": "^4.5.4"
   }
 }
