@@ -1,12 +1,12 @@
-export default function (cpf) {
+export default function (cpf:string) {
   let soma = 0
   let resto
   const strCPF = cpf.replace(/[^0-9]+/g, '')
-  if (strCPF === '00000000000') { 
+  if (strCPF === '00000000000') {
     return false
   }
 
-  for (let i = 1; i <= 9; i++) { 
+  for (let i = 1; i <= 9; i++) {
     soma += parseInt(strCPF.substring(i - 1, i)) * (11 - i)
   }
   resto = (soma * 10) % 11
@@ -19,15 +19,15 @@ export default function (cpf) {
   }
 
   soma = 0
-  for (let i = 1; i <= 10; i++) { 
+  for (let i = 1; i <= 10; i++) {
     soma = soma + parseInt(strCPF.substring(i - 1, i)) * (12 - i)
   }
   resto = (soma * 10) % 11
-  
+
   if ((resto === 10) || (resto === 11)) {
     resto = 0
   }
-  
+
   if (resto !== parseInt(strCPF.substring(10, 11))) {
     return false
   }

@@ -1,23 +1,35 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
-    es2021: true,
+    node: true,
   },
   extends: [
-    'plugin:vue/essential',
-    'standard',
+    '@nuxtjs/eslint-config-typescript',
+    'plugin:nuxt/recommended',
   ],
-  excludes: [
-    '/dist'
-  ],
-  parserOptions: {
-    ecmaVersion: 12,
-    sourceType: 'module',
-  },
   plugins: [
-    'vue',
   ],
+  // add your custom rules here
   rules: {
-    'comma-dangle': ['error', 'always-multiline'], // https://github.com/eslint/eslint/issues/11310
+    'comma-dangle': ['error', 'always-multiline'],
+    'no-console': ['error', { allow: ['warn', 'error'] }],
+    'vue/multi-word-component-names': 0,
+    'vue/no-mutating-props': ['warn'],
+    'import/order': ['error', {
+      pathGroups: [
+        {
+          pattern: '@/**',
+          group: 'external',
+        },
+      ],
+    }],
+  },
+
+  settings: {
+    'import/core-modules': [
+      'vue',
+      'vuex',
+    ],
   },
 }

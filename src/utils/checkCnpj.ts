@@ -1,4 +1,4 @@
-export default function checkCnpj (cnpj) {
+export default function checkCnpj (cnpj:string):boolean {
   cnpj = cnpj.replace(/[^0-9]+/g, '')
 
   if (cnpj === '') { return false }
