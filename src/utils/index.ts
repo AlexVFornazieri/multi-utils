@@ -4,11 +4,11 @@ import checkCpf from './checkCpf'
 import slugify from './slugify'
 import arraySearch from './arraySearch'
 
-export function planeObject (data) {
+export function planeObject (data:any) {
   return JSON.parse(JSON.stringify(data))
 }
 
-export function dateString (date) {
+export function dateString (date:Date) {
   return date.toISOString().split('T')[0]
 }
 
@@ -25,11 +25,11 @@ export function getPeriodLast (days = 30) {
 * @author: takien
 * @url: http://takien.com
 */
-export function getYoutubeId (url) {
+export function getYoutubeId (url:string) {
   let ID = ''
-  url = url.replace(/(>|<)/gi, '').split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/)
-  if (url[2] !== undefined) {
-    ID = url[2].split(/[^0-9a-z_-]/i)
+  let urlArray = url.replace(/(>|<)/gi, '').split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/)
+  if (urlArray[2] !== undefined) {
+    urlArray = url[2].split(/[^0-9a-z_-]/i)
     ID = ID[0]
   } else {
     ID = url
@@ -42,7 +42,7 @@ export function getCurrentURI () {
   return actualHost
 }
 
-export function getUrlParam (name) {
+export function getUrlParam (name:string) {
   const urlParams = new URLSearchParams(window.location.search)
   return urlParams.get(name)
 }

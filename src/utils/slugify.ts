@@ -1,4 +1,4 @@
-export default function (str) {
+export default function (str:string) {
   str = str.replace(/^\s+|\s+$/g, '') // trim
   str = str.toLowerCase()
 
