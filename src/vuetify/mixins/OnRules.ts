@@ -1,5 +1,5 @@
 import { Component, Vue } from 'nuxt-property-decorator'
-import { checkCnpj, checkCpf } from '../../utils'
+import { checkCnpj, checkCpf } from '../../'
 
 const minLenght = (min:number, msg:string) => (v :string) => (
   (v && v.toString().length >= min) || msg
