@@ -3,6 +3,7 @@ import checkCnpj from './checkCnpj'
 import checkCpf from './checkCpf'
 import slugify from './slugify'
 import arraySearch from './arraySearch'
+import arrayManySearch from './arrayManySearch'
 
 export function planeObject (data:any) {
   return JSON.parse(JSON.stringify(data))
@@ -49,6 +50,7 @@ export function getUrlParam (name:string) {
 
 export {
   arraySearch,
+  arrayManySearch,
   copyToClipboard,
   checkCnpj,
   checkCpf,
