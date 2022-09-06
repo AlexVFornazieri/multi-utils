@@ -1,6 +1,6 @@
 {
   "name": "multi-utils",
-  "version": "0.2.2",
+  "version": "0.3.3",
   "description": "A multi-platform utils pack.",
   "main": "index.js",
   "types": "index.d.ts",
